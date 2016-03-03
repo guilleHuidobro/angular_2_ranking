@@ -43,6 +43,16 @@ class Article {
           {{ article.votes }}
         </div>
         <div class="label">
+          Puntos
+        </div>
+      </div>
+    </div>
+    <div class="four wide column center aligned votes">
+      <div class="ui statistic">
+        <div class="value">
+          {{ article.votes }}
+        </div>
+        <div class="label">
           Points
         </div>
       </div>
