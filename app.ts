@@ -41,9 +41,7 @@ class Article {
   template: `
     <div class="four wide column center aligned votes">
       <div class="ui statistic">
-        <div class="value">
-          {{ article.imgLink }}
-        </div>
+      <img [src]="article.imgLink">        
       </div>
     </div>
     <div class="four wide column center aligned votes">
@@ -65,13 +63,13 @@ class Article {
         <li class="item">
           <a href (click)="voteUp()">
             <i class="arrow up icon"></i>
-              upvote
+              Es un 1
             </a>
         </li>
         <li class="item">
           <a href (click)="voteDown()">
             <i class="arrow down icon"></i>
-            downvote
+            Es un 0
           </a>
         </li>
       </ul>
