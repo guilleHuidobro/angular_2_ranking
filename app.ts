@@ -4,11 +4,13 @@ import { Component } from 'angular2/core';
 class Article {
   title: string;
   link: string;
+  imgLink: string;
   votes: number;
 
-  constructor(title: string, link: string, votes?: number) {
+  constructor(title: string, link: string, imgLink: string, votes?: number) {
     this.title = title;
     this.link = link;
+    this.imgLink = imgLink;
     this.votes = votes || 0;
   }
 
@@ -40,10 +42,7 @@ class Article {
     <div class="four wide column center aligned votes">
       <div class="ui statistic">
         <div class="value">
-          {{ article.votes }}
-        </div>
-        <div class="label">
-          Puntos
+          {{ article.imgLink }}
         </div>
       </div>
     </div>
@@ -128,9 +127,9 @@ class RedditApp {
 
   constructor() {
     this.articles = [
-      new Article('Angular 2', 'http://angular.io', 3),
-      new Article('Fullstack', 'http://fullstack.io', 2),
-      new Article('Angular Homepage', 'http://angular.io', 1),
+      new Article('Angular 2', 'http://angular.io','https://goo.gl/WqP3yD', 3),
+      new Article('Fullstack', 'http://fullstack.io','https://goo.gl/DrBPFB', 2),
+      new Article('Angular Homepage', 'http://angular.io','https://goo.gl/5gUaML', 1),
     ];
   }
 
