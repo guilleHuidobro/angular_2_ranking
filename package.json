@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "clean": "rm -f ./*.js; rm -f ./*.js.map; rm -f ./intermediates/*.js; rm -f ./intermediates/*.js.map",
+    "clean": "rm -f ./*.js; rm -f ./*.js.map; rm -f ./app/components/*.js; rm -f ./app/components/*.js.map; rm -f ./app/*.js; rm -f ./app/*.js.map; ",
     "tsc": "./node_modules/.bin/tsc",
     "tsc:w": "./node_modules/.bin/tsc -w",
-    "serve": "./node_modules/.bin/live-server --host=localhost --port=8080 .",
-    "go": "concurrent \"npm run tsc:w\" \"npm run serve\" "
+    "go": "concurrent \"npm run tsc:w\" "
   },
   "license": "ISC",
   "dependencies": {
@@ -22,6 +21,7 @@
   "devDependencies": {
     "concurrently": "1.0.0",
     "live-server": "0.9.0",
-    "typescript": "1.7.3"
+    "typescript": "1.7.3",
+    "typings":"latest"
   }
 }

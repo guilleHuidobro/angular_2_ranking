@@ -1,54 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Angular 2 - Simple Reddit</title>
-    <link rel="icon" type="image/png" href="resources/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="resources/images/favicon.ico" />
-    <!-- Libraries -->
-    <script src="node_modules/es6-shim/es6-shim.js"></script>
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <!-- Set the base href -->
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    
+    <title>Guillermo Huidobro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="resources/vendor/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
+    <!-- IE required polyfills, in this exact order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://npmcdn.com/angular2@2.0.0-beta.8/es6/dev/src/testing/shims_for_IE.js"></script>   
 
-    <!-- Configure System.js, our module loader -->
+    <script src="https://code.angularjs.org/2.0.0-beta.8/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://npmcdn.com/typescript@1.8.2/lib/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.8/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.8/angular2.dev.js"></script>
+    
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+    
+    <!-- Add the router library -->
+    <script src="https://code.angularjs.org/2.0.0-beta.8/router.dev.js"></script>
+    
     <script>
       System.config({
-        packages: {        
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
+        packages: {'app': {defaultExtension: 'ts'}} 
       });
-      System.import('app.js')
+      System.import('app/main')
             .then(null, console.error.bind(console));
     </script>
+  </head>
 
-    <!-- Menu Bar -->
-    <div class="ui menu">
-      <div class="ui container">
-        <a href="#" class="header item">
-          <img class="logo" src="resources/images/ng-book-2-minibook.png">
-          ng-book 2
-        </a>
-        <div class="header item borderless">
-          <h1 class="ui header">
-            Angular 2 Simple Reddit
-          </h1>
-        </div>
-      </div>
-    </div>
-
+  <body>
     <div class="ui main text container">
-      <reddit></reddit> <!-- <--- Our app loads here! -->
+    <my-app>loading...</my-app>
     </div>
-
   </body>
+
 </html>
