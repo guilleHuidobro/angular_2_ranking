@@ -16,6 +16,9 @@ import {RankingComponent} from './components/ranking.component';
     <a  [routerLink]="['Ranking']" [class.active]="getLinkStyle('/ranking')" class="item">
       Ranking
     </a>
+    <a class="item">
+      Login
+    </a>
   </div>
 </div>
     <router-outlet></router-outlet>
