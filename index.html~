@@ -23,9 +23,6 @@
     
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
-
-    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script> <!-- Firebase via CDN for now.-->
-
     
     <!-- Add the router library -->
     <script src="https://code.angularjs.org/2.0.0-beta.8/router.dev.js"></script>
