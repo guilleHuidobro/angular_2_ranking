@@ -19,6 +19,8 @@ System.register(['angular2/core'], function(exports_1) {
             RankingComponent = (function () {
                 function RankingComponent() {
                 }
+                RankingComponent.prototype.ngOnInit = function () {
+                };
                 RankingComponent = __decorate([
                     core_1.Component({
                         selector: 'ranking-view',

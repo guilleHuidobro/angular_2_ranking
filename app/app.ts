@@ -1,11 +1,27 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES, Location , Router} from 'angular2/router';
+import {
+  Component
+}
+from 'angular2/core';
+import {
+  RouteConfig, ROUTER_DIRECTIVES, Location, Router
+}
+from 'angular2/router';
 
-import {CardComponent} from './components/card.component';
-import {RankingComponent} from './components/ranking.component';
+import {
+  CardComponent
+}
+from './components/card.component';
+import {
+  RankingComponent
+}
+from './components/ranking.component';
+import {
+  AccountLoginComponent
+}
+from './components/account-login.component';
 
-
-@Component({
+@
+Component({
   selector: 'my-app',
   template: `
   <div class="ui inverted segment">
@@ -16,37 +32,55 @@ import {RankingComponent} from './components/ranking.component';
     <a  [routerLink]="['Ranking']" [class.active]="getLinkStyle('/ranking')" class="item">
       Ranking
     </a>
-    <a class="item">
-      Login
+    <a [routerLink]="['Login']" [class.active]="getLinkStyle('/login')" class="item">
+      Logins
+    </a>
+    <a (click)="logOut()" class="item">
+      Log out
     </a>
   </div>
 </div>
     <router-outlet></router-outlet>
   `,
   directives: [ROUTER_DIRECTIVES]
-})
-@RouteConfig([
+})@ RouteConfig([
 
-  {path: '/card',   name: 'Card', component: CardComponent, useAsDefault: true},
-  {path: '/ranking', name: 'Ranking', component: RankingComponent}
+  {
+    path: '/card',
+    name: 'Card',
+    component: CardComponent,
+    useAsDefault: true
+  }, {
+    path: '/ranking',
+    name: 'Ranking',
+    component: RankingComponent
+  }, {
+    path: '/login',
+    name: 'Login',
+    component: AccountLoginComponent
+  }
 ])
 export class AppComponent {
-  
-      router: Router;
-    location: Location;
 
-    constructor(router: Router, location: Location) {
-        this.router = router;
-        this.location = location;
+  router: Router;
+  location: Location;
+
+  constructor(router: Router, location: Location) {
+    this.router = router;
+    this.location = location;
+  }
+
+  getLinkStyle(path) {
+
+    if (path === this.location.path()) {
+      return true;
     }
-
-    getLinkStyle(path) {
-
-        if(path === this.location.path()){
-            return true;
-        }
-        else if(path.length > 0){
-            return this.location.path().indexOf(path) > -1;
-        }
+    else if (path.length > 0) {
+      return this.location.path().indexOf(path) > -1;
     }
+  }
+
+  logOut() {
+    alert("afueraa");
+  }
 }
