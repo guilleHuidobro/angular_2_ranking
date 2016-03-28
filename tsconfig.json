@@ -16,7 +16,8 @@
     "./app/main.ts",
     "./app/components/card.component.ts",
     "./app/components/ranking.component.ts",
-    "./app/components/account-login.component.ts"
+    "./app/components/account-login.component.ts",
+    "./app/components/dashboard.component.ts"
   ],
   "exclude": [
     "node_modules"

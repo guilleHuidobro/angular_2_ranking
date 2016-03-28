@@ -19,6 +19,7 @@ import {
   AccountLoginComponent
 }
 from './components/account-login.component';
+import {ApiService} from '../app/components/api.service';
 
 @
 Component({
@@ -42,7 +43,8 @@ Component({
 </div>
     <router-outlet></router-outlet>
   `,
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [ApiService],
 })@ RouteConfig([
 
   {
@@ -65,7 +67,7 @@ export class AppComponent {
   router: Router;
   location: Location;
 
-  constructor(router: Router, location: Location) {
+  constructor(router: Router, location: Location,private _apiService: ApiService) {
     this.router = router;
     this.location = location;
   }
@@ -80,7 +82,14 @@ export class AppComponent {
     }
   }
 
-  logOut() {
-    alert("afueraa");
-  }
+    /**
+     * Logout click callback.
+     */
+    onLogout() {
+        this._apiService.logoutAccount(success => {
+            if (success) {
+                this.router.navigate(['Card']);
+            }
+        });
+    }
 }
