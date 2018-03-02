@@ -39,8 +39,3 @@ form.form:after {
 ul.ui.list li:before {
   content: '';
 }
-
-.voters {
-  clear: both;
-  width: 100%;
-}
